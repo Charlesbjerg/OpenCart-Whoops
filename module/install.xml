@@ -11,16 +11,16 @@
         <operation>
             <search trim="true"><![CDATA[
             
-             $this->registry->set('log', new Log($this->config->get('config_error_filename')));
+             set_error_handler(array($this, 'handler'));	
 
             ]]></search>
-            <add position="after"><![CDATA[
-            
+            <add position="before"><![CDATA[
+        
             // [ OCDEV Debug Enable - Start ]
 
             if (OC_DEBUG == TRUE) {
 
-                require "D:/Projects/server/opencart/vendor/autoload.php";
+                require DIR_APPLICATION . "../vendor/autoload.php";
 
                 $whoops = new \Whoops\Run;
                 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
@@ -28,7 +28,6 @@
             }
 
             // [ OCDEV Debug Enable - End ]
-
             
             ]]></add>
         </operation>
@@ -38,16 +37,16 @@
         <operation>
             <search trim="true"><![CDATA[
             
-             $this->registry->set('log', new Log($this->config->get('config_error_filename')));
+             set_error_handler(array($this, 'handler'));	
 
             ]]></search>
-            <add position="after"><![CDATA[
+            <add position="before"><![CDATA[
             
             // [ OCDEV Debug Enable - Start ]
 
             if (OC_DEBUG == TRUE) {
 
-                require "D:/Projects/server/opencart/vendor/autoload.php";
+                require DIR_APPLICATION . "../vendor/autoload.php";
 
                 $whoops = new \Whoops\Run;
                 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
