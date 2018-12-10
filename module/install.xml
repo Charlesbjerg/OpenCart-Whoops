@@ -18,9 +18,7 @@
             
             // [ OCDEV Debug Enable - Start ]
 
-            $debug = true;
-
-            if ($debug) {
+            if (OC_DEBUG == TRUE) {
 
                 require "D:/Projects/server/opencart/vendor/autoload.php";
 
@@ -47,9 +45,7 @@
             
             // [ OCDEV Debug Enable - Start ]
 
-            $debug = true;
-
-            if ($debug) {
+            if (OC_DEBUG == TRUE) {
 
                 require "D:/Projects/server/opencart/vendor/autoload.php";
 
