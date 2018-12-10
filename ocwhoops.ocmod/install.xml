@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <code>OCDEV</code>
+    <name>OpenCart Dev Mode</name>
+    <version>1.0</version>
+    <author>CU</author>
+    <link></link>
+
+
+    <file path="catalog/controller/startup/error.php">
+        <operation>
+            <search trim="true"><![CDATA[
+            
+             $this->registry->set('log', new Log($this->config->get('config_error_filename')));
+
+            ]]></search>
+            <add position="after"><![CDATA[
+            
+            // [ OCDEV Debug Enable - Start ]
+
+            $debug = true;
+
+            if ($debug) {
+
+                require "D:/Projects/server/opencart/vendor/autoload.php";
+
+                $whoops = new \Whoops\Run;
+                $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+                $whoops->register();
+            }
+
+            // [ OCDEV Debug Enable - End ]
+
+            
+            ]]></add>
+        </operation>
+    </file>  
+
+    <file path="admin/controller/startup/error.php">
+        <operation>
+            <search trim="true"><![CDATA[
+            
+             $this->registry->set('log', new Log($this->config->get('config_error_filename')));
+
+            ]]></search>
+            <add position="after"><![CDATA[
+            
+            // [ OCDEV Debug Enable - Start ]
+
+            $debug = true;
+
+            if ($debug) {
+
+                require "D:/Projects/server/opencart/vendor/autoload.php";
+
+                $whoops = new \Whoops\Run;
+                $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+                $whoops->register();
+            }
+
+            // [ OCDEV Debug Enable - End ]
+
+            
+            ]]></add>
+        </operation>
+    </file>  
+
+</modification>

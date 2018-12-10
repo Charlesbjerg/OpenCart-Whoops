@@ -1,0 +1,3 @@
+OCDEV - OpenCart Dev Mode
+
+Adds the Filp/Whoops library to OpenCart for pretty print error messages.
