@@ -3,8 +3,8 @@
     <code>OCDEV</code>
     <name>OpenCart Dev Mode</name>
     <version>1.0</version>
-    <author>CU</author>
-    <link></link>
+    <author>Charlie Underhill</author>
+    <link>https://charlesbjerg.com/</link>
 
 
     <file path="catalog/controller/startup/error.php">
